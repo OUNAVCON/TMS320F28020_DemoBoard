@@ -44,6 +44,9 @@
 								</option>
 								<option id="com.ti.ccstudio.buildDefinitions.C2000_17.6.compilerID.DIAG_WRAP.1167168064" name="Wrap diagnostic messages (--diag_wrap)" superClass="com.ti.ccstudio.buildDefinitions.C2000_17.6.compilerID.DIAG_WRAP" value="com.ti.ccstudio.buildDefinitions.C2000_17.6.compilerID.DIAG_WRAP.off" valueType="enumerated"/>
 								<option id="com.ti.ccstudio.buildDefinitions.C2000_17.6.compilerID.DISPLAY_ERROR_NUMBER.306392692" name="Emit diagnostic identifier numbers (--display_error_number, -pden)" superClass="com.ti.ccstudio.buildDefinitions.C2000_17.6.compilerID.DISPLAY_ERROR_NUMBER" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.C2000_17.6.compilerID.ADVICE__PERFORMANCE.2040435809" name="Provide advice on optimization techniques (--advice:performance)" superClass="com.ti.ccstudio.buildDefinitions.C2000_17.6.compilerID.ADVICE__PERFORMANCE" value="--advice:performance=all" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.C2000_17.6.compilerID.CMD_FILE.309671727" name="Read options from specified file (--cmd_file, -@)" superClass="com.ti.ccstudio.buildDefinitions.C2000_17.6.compilerID.CMD_FILE" valueType="stringList"/>
+								<option id="com.ti.ccstudio.buildDefinitions.C2000_17.6.compilerID.SECTION_SIZES.439607902" superClass="com.ti.ccstudio.buildDefinitions.C2000_17.6.compilerID.SECTION_SIZES" value="com.ti.ccstudio.buildDefinitions.C2000_17.6.compilerID.SECTION_SIZES.on" valueType="enumerated"/>
 								<inputType id="com.ti.ccstudio.buildDefinitions.C2000_17.6.compiler.inputType__C_SRCS.1185926339" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.C2000_17.6.compiler.inputType__C_SRCS"/>
 								<inputType id="com.ti.ccstudio.buildDefinitions.C2000_17.6.compiler.inputType__CPP_SRCS.1544771039" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.C2000_17.6.compiler.inputType__CPP_SRCS"/>
 								<inputType id="com.ti.ccstudio.buildDefinitions.C2000_17.6.compiler.inputType__ASM_SRCS.1505113400" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.C2000_17.6.compiler.inputType__ASM_SRCS"/>
@@ -70,6 +73,22 @@
 							<tool id="com.ti.ccstudio.buildDefinitions.C2000_17.6.hex.1534483226" name="C2000 Hex Utility" superClass="com.ti.ccstudio.buildDefinitions.C2000_17.6.hex"/>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.C2000.Debug.1415007491.752886016" name="IQmath.lib" rcbsApplicability="disable" resourcePath="lib/IQmath.lib" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C2000_17.6.exe.linkerDebug.2064927764.1214304401">
+						<tool id="com.ti.ccstudio.buildDefinitions.C2000_17.6.exe.linkerDebug.2064927764.1214304401" name="C2000 Linker" superClass="com.ti.ccstudio.buildDefinitions.C2000_17.6.exe.linkerDebug.2064927764">
+							<inputType id="com.ti.ccstudio.buildDefinitions.C2000_17.6.exeLinker.inputType__CMD_SRCS.1456188395" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.C2000_17.6.exeLinker.inputType__CMD_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.C2000_17.6.exeLinker.inputType__CMD2_SRCS.1644814691" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.C2000_17.6.exeLinker.inputType__CMD2_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.C2000_17.6.exeLinker.inputType__GEN_CMDS.839451717" name="Generated Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.C2000_17.6.exeLinker.inputType__GEN_CMDS"/>
+						</tool>
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.290915019" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.852042285" name="Resource Custom Build Step Input Type">
+								<additionalInput kind="additionalinputdependency" paths=""/>
+							</inputType>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1269525138" name="Resource Custom Build Step Output Type"/>
+						</tool>
+					</fileInfo>
+					<sourceEntries>
+						<entry excluding="src/F2802x_GlobalVariableDefs.c|peripheral_lib/src/wdog.c|peripheral_lib/src/timer.c|peripheral_lib/src/spi.c|peripheral_lib/src/sci.c|peripheral_lib/src/sci_io.c|peripheral_lib/src/pwr.c|peripheral_lib/src/pwm.c|peripheral_lib/src/pie.c|peripheral_lib/src/i2c.c|peripheral_lib/src/gpio.c|peripheral_lib/src/flash.c|peripheral_lib/src/f2802x_usdelay.asm|peripheral_lib/src/f2802x_tempsensorconv.c|peripheral_lib/src/f2802x_spi.c|peripheral_lib/src/f2802x_sci.c|peripheral_lib/src/f2802x_piectrl.c|peripheral_lib/src/f2802x_i2c.c|peripheral_lib/src/f2802x_gpio.c|peripheral_lib/src/f2802x_epwm.c|peripheral_lib/src/f2802x_ecap.c|peripheral_lib/src/f2802x_disint.asm|peripheral_lib/src/f2802x_dbgier.asm|peripheral_lib/src/f2802x_csmpasswords.asm|peripheral_lib/src/f2802x_cputimers.c|peripheral_lib/src/f2802x_comp.c|peripheral_lib/src/f2802x_codestartbranch.asm|peripheral_lib/src/f2802x_adc.c|peripheral_lib/src/comp.c|peripheral_lib/src/cap.c|peripheral_lib/src/adc.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>

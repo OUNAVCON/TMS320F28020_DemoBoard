@@ -42,7 +42,7 @@
 
 #include "F2802x_Device.h"     // Headerfile Include File
 #include "f2802x_examples.h"   // Examples Include File
-#include "F2802x_SWPrioritizedIsrLevels.h"
+#include <f2802x_swprioritizedisrlevels_h>
 
 // Connected to INT13 of CPU (use MINT13 mask):
 #if (INT13PL != 0)
