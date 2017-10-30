@@ -8380,7 +8380,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="C8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C1206"/>
 <part name="C9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C1206"/>
 <part name="C10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C1206" value="2.2uF"/>
-<part name="C11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C1206"/>
+<part name="C11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C1206" value="2.2uf"/>
 <part name="U1" library="SparkFun-IC-Power" library_urn="urn:adsk.eagle:library:526" deviceset="V_REG_AP2112" device="K-3.3V" value="3.3V"/>
 <part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="3.5MM-NO_SILK"/>
 <part name="J3" library="Wurth_Elektronik_Electromechanic_Wire_to_Board_Connectors_rev17b" library_urn="urn:adsk.eagle:library:486" deviceset="61201422323" device=""/>
@@ -8403,7 +8403,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <instance part="R2" gate="G$1" x="22.86" y="60.96" rot="R180"/>
 <instance part="R3" gate="G$1" x="20.32" y="40.64" rot="R180"/>
 <instance part="R4" gate="G$1" x="17.78" y="22.86" rot="R180"/>
-<instance part="R5" gate="G$1" x="63.5" y="12.7" rot="R270"/>
+<instance part="R5" gate="G$1" x="66.04" y="12.7" rot="R270"/>
 <instance part="R6" gate="G$1" x="7.62" y="2.54" rot="R180"/>
 <instance part="R7" gate="G$1" x="-7.62" y="25.4" rot="R180"/>
 <instance part="R8" gate="G$1" x="-10.16" y="50.8" rot="R180"/>
@@ -8467,7 +8467,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <segment>
 <pinref part="R5" gate="G$1" pin="2"/>
 <pinref part="VDD4" gate="G$1" pin="VDD"/>
-<wire x1="63.5" y1="7.62" x2="63.5" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="7.62" x2="63.5" y2="5.08" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -8517,11 +8517,39 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="35.56" y1="48.26" x2="35.56" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 </net>
+<net name="TCK" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="GPIO38(TCK)"/>
+<wire x1="99.06" y1="60.96" x2="101.6" y2="60.96" width="0.1524" layer="91"/>
+<label x="101.6" y="60.96" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="TDO" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="GPIO37(TDO)"/>
+<wire x1="99.06" y1="58.42" x2="101.6" y2="58.42" width="0.1524" layer="91"/>
+<label x="101.6" y="58.42" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="TMS" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="GPIO36(TMS)"/>
+<wire x1="99.06" y1="55.88" x2="101.6" y2="55.88" width="0.1524" layer="91"/>
+<label x="101.6" y="55.88" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="TDI" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="GPIO35(TDI)"/>
+<wire x1="99.06" y1="53.34" x2="101.6" y2="53.34" width="0.1524" layer="91"/>
+<label x="101.6" y="53.34" size="1.778" layer="95"/>
+</segment>
+</net>
 <net name="N$5" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="TRST"/>
+<pinref part="U$1" gate="G$1" pin="XRS"/>
 <pinref part="R5" gate="G$1" pin="1"/>
-<wire x1="63.5" y1="20.32" x2="63.5" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="20.32" x2="66.04" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
