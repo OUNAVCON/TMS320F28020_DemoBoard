@@ -1,5 +1,5 @@
 [Eagle]
-Version="08 02 00"
+Version="08 04 00"
 Platform="Windows"
 Globals="Globals"
 Desktop="Desktop"
@@ -416,7 +416,7 @@ UsedLibrary="TMS320F28020.lbr"
 [Win_1]
 Type="Control Panel"
 Loc="0 3 1919 1019"
-State=2
+State=0
 Number=0
 
 [Desktop]
