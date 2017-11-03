@@ -8480,8 +8480,9 @@ Source: www.vanlong.com</description>
 <part name="VDD4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
 <part name="QF1" library="crystal" library_urn="urn:adsk.eagle:library:204" deviceset="8M10AHC49T" device="" package3d_urn="urn:adsk.eagle:package:12112/1"/>
 <part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="SUPPLY6" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY7" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="VDD5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
+<part name="SUPPLY8" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -8511,8 +8512,9 @@ Source: www.vanlong.com</description>
 <instance part="VDD4" gate="G$1" x="66.04" y="2.54" rot="R180"/>
 <instance part="QF1" gate="G$1" x="35.56" y="40.64"/>
 <instance part="SUPPLY5" gate="GND" x="35.56" y="25.4"/>
-<instance part="SUPPLY6" gate="GND" x="20.32" y="-48.26"/>
 <instance part="SUPPLY7" gate="GND" x="40.64" y="76.2"/>
+<instance part="VDD5" gate="G$1" x="-88.9" y="7.62"/>
+<instance part="SUPPLY8" gate="GND" x="-40.64" y="-17.78"/>
 </instances>
 <busses>
 </busses>
@@ -8560,6 +8562,11 @@ Source: www.vanlong.com</description>
 <pinref part="VDD1" gate="G$1" pin="VDD"/>
 <pinref part="U1" gate="G$1" pin="OUT"/>
 <wire x1="-27.94" y1="124.46" x2="-35.56" y2="124.46" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="J3" gate="G$1" pin="5"/>
+<wire x1="-73.66" y1="5.08" x2="-88.9" y2="5.08" width="0.1524" layer="91"/>
+<pinref part="VDD5" gate="G$1" pin="VDD"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -8612,6 +8619,34 @@ Source: www.vanlong.com</description>
 <wire x1="43.18" y1="81.28" x2="40.64" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="SUPPLY7" gate="GND" pin="GND"/>
 <wire x1="40.64" y1="81.28" x2="40.64" y2="78.74" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="J3" gate="G$1" pin="4"/>
+<wire x1="-53.34" y1="10.16" x2="-40.64" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="-40.64" y1="10.16" x2="-40.64" y2="0" width="0.1524" layer="91"/>
+<pinref part="J3" gate="G$1" pin="12"/>
+<wire x1="-40.64" y1="0" x2="-40.64" y2="-5.08" width="0.1524" layer="91"/>
+<wire x1="-40.64" y1="-5.08" x2="-40.64" y2="-10.16" width="0.1524" layer="91"/>
+<wire x1="-40.64" y1="-10.16" x2="-53.34" y2="-10.16" width="0.1524" layer="91"/>
+<pinref part="J3" gate="G$1" pin="10"/>
+<wire x1="-53.34" y1="-5.08" x2="-40.64" y2="-5.08" width="0.1524" layer="91"/>
+<junction x="-40.64" y="-5.08"/>
+<pinref part="J3" gate="G$1" pin="8"/>
+<wire x1="-53.34" y1="0" x2="-40.64" y2="0" width="0.1524" layer="91"/>
+<junction x="-40.64" y="0"/>
+<pinref part="SUPPLY8" gate="GND" pin="GND"/>
+<wire x1="-40.64" y1="-10.16" x2="-40.64" y2="-15.24" width="0.1524" layer="91"/>
+<junction x="-40.64" y="-10.16"/>
+<wire x1="-33.02" y1="-30.48" x2="-33.02" y2="-15.24" width="0.1524" layer="91"/>
+<wire x1="-33.02" y1="-15.24" x2="-40.64" y2="-15.24" width="0.1524" layer="91"/>
+<junction x="-40.64" y="-15.24"/>
+<pinref part="R9" gate="G$1" pin="2"/>
+<pinref part="R8" gate="G$1" pin="1"/>
+<wire x1="-78.74" y1="-25.4" x2="-60.96" y2="-25.4" width="0.1524" layer="91"/>
+<wire x1="-60.96" y1="-25.4" x2="-48.26" y2="-25.4" width="0.1524" layer="91"/>
+<junction x="-60.96" y="-25.4"/>
+<wire x1="-60.96" y1="-25.4" x2="-60.96" y2="-30.48" width="0.1524" layer="91"/>
+<wire x1="-33.02" y1="-30.48" x2="-60.96" y2="-30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -8730,13 +8765,6 @@ Source: www.vanlong.com</description>
 <pinref part="J3" gate="G$1" pin="13"/>
 <pinref part="R8" gate="G$1" pin="2"/>
 <wire x1="-73.66" y1="-15.24" x2="-78.74" y2="-15.24" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$10" class="0">
-<segment>
-<pinref part="R8" gate="G$1" pin="1"/>
-<pinref part="R9" gate="G$1" pin="2"/>
-<wire x1="-78.74" y1="-25.4" x2="-48.26" y2="-25.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

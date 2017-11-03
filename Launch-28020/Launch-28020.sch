@@ -9141,6 +9141,7 @@ wire to board 2.54 mm (0.100") pitch header</description>
 <part name="X2" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="C-GRID-04" device="-74099"/>
 <part name="VDD9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
 <part name="SUPPLY10" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="X3" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="C-GRID-06" device="-74099"/>
 </parts>
 <sheets>
 <sheet>
@@ -9193,6 +9194,12 @@ wire to board 2.54 mm (0.100") pitch header</description>
 <instance part="X2" gate="-4" x="-106.68" y="76.2"/>
 <instance part="VDD9" gate="G$1" x="-124.46" y="81.28"/>
 <instance part="SUPPLY10" gate="GND" x="-116.84" y="73.66"/>
+<instance part="X3" gate="-1" x="-157.48" y="109.22"/>
+<instance part="X3" gate="-2" x="-157.48" y="106.68"/>
+<instance part="X3" gate="-3" x="-157.48" y="104.14"/>
+<instance part="X3" gate="-4" x="-157.48" y="101.6"/>
+<instance part="X3" gate="-5" x="-157.48" y="99.06"/>
+<instance part="X3" gate="-6" x="-157.48" y="96.52"/>
 </instances>
 <busses>
 </busses>
@@ -9528,6 +9535,48 @@ wire to board 2.54 mm (0.100") pitch header</description>
 <pinref part="X2" gate="-2" pin="S"/>
 <wire x1="-109.22" y1="81.28" x2="-111.76" y2="81.28" width="0.1524" layer="91"/>
 <label x="-111.76" y="81.28" size="1.778" layer="95" rot="R180"/>
+</segment>
+</net>
+<net name="PWM1H" class="0">
+<segment>
+<pinref part="X3" gate="-1" pin="S"/>
+<wire x1="-160.02" y1="109.22" x2="-165.1" y2="109.22" width="0.1524" layer="91"/>
+<label x="-165.1" y="109.22" size="1.778" layer="95" rot="R180"/>
+</segment>
+</net>
+<net name="PWM1L" class="0">
+<segment>
+<pinref part="X3" gate="-2" pin="S"/>
+<wire x1="-160.02" y1="106.68" x2="-165.1" y2="106.68" width="0.1524" layer="91"/>
+<label x="-165.1" y="106.68" size="1.778" layer="95" rot="R180"/>
+</segment>
+</net>
+<net name="PWM2H" class="0">
+<segment>
+<pinref part="X3" gate="-3" pin="S"/>
+<wire x1="-160.02" y1="104.14" x2="-165.1" y2="104.14" width="0.1524" layer="91"/>
+<label x="-165.1" y="104.14" size="1.778" layer="95" rot="R180"/>
+</segment>
+</net>
+<net name="PWM2L" class="0">
+<segment>
+<pinref part="X3" gate="-4" pin="S"/>
+<wire x1="-160.02" y1="101.6" x2="-165.1" y2="101.6" width="0.1524" layer="91"/>
+<label x="-165.1" y="101.6" size="1.778" layer="95" rot="R180"/>
+</segment>
+</net>
+<net name="PWM3H" class="0">
+<segment>
+<pinref part="X3" gate="-5" pin="S"/>
+<wire x1="-160.02" y1="99.06" x2="-165.1" y2="99.06" width="0.1524" layer="91"/>
+<label x="-165.1" y="99.06" size="1.778" layer="95" rot="R180"/>
+</segment>
+</net>
+<net name="PWM3L" class="0">
+<segment>
+<pinref part="X3" gate="-6" pin="S"/>
+<wire x1="-160.02" y1="96.52" x2="-165.1" y2="96.52" width="0.1524" layer="91"/>
+<label x="-165.1" y="96.52" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 </nets>

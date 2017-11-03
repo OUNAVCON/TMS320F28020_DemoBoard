@@ -8490,8 +8490,8 @@ Source: www.vanlong.com</description>
 <instances>
 <instance part="U$1" gate="G$1" x="66.04" y="33.02"/>
 <instance part="R5" gate="G$1" x="66.04" y="12.7" rot="R270"/>
-<instance part="R8" gate="G$1" x="-40.64" y="-5.08" rot="R180"/>
-<instance part="R9" gate="G$1" x="-88.9" y="-5.08" rot="R180"/>
+<instance part="R8" gate="G$1" x="-78.74" y="-20.32" rot="R90"/>
+<instance part="R9" gate="G$1" x="-48.26" y="-20.32" rot="R270"/>
 <instance part="C1" gate="G$1" x="40.64" y="33.02" rot="R180"/>
 <instance part="C7" gate="G$1" x="93.98" y="2.54" rot="R270"/>
 <instance part="C8" gate="G$1" x="30.48" y="33.02" rot="R180"/>
@@ -8500,7 +8500,7 @@ Source: www.vanlong.com</description>
 <instance part="C11" gate="G$1" x="30.48" y="48.26" rot="R90"/>
 <instance part="U1" gate="G$1" x="-43.18" y="119.38"/>
 <instance part="J1" gate="G$1" x="-73.66" y="124.46" rot="MR180"/>
-<instance part="J3" gate="G$1" x="-63.5" y="5.08" rot="R90"/>
+<instance part="J3" gate="G$1" x="-63.5" y="5.08" rot="R270"/>
 <instance part="VDD1" gate="G$1" x="-27.94" y="127"/>
 <instance part="VDD2" gate="G$1" x="60.96" y="86.36"/>
 <instance part="VDD3" gate="G$1" x="86.36" y="-5.08" rot="R180"/>
@@ -8635,8 +8635,9 @@ Source: www.vanlong.com</description>
 <label x="101.6" y="60.96" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="-66.04" y1="40.64" x2="-63.5" y2="40.64" width="0.1524" layer="91"/>
-<label x="-63.5" y="40.64" size="1.778" layer="95"/>
+<label x="-81.28" y="-10.16" size="1.778" layer="95" rot="R180"/>
+<pinref part="J3" gate="G$1" pin="11"/>
+<wire x1="-73.66" y1="-10.16" x2="-81.28" y2="-10.16" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="TDO" class="0">
@@ -8646,8 +8647,9 @@ Source: www.vanlong.com</description>
 <label x="101.6" y="58.42" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="-66.04" y1="38.1" x2="-63.5" y2="38.1" width="0.1524" layer="91"/>
-<label x="-63.5" y="38.1" size="1.778" layer="95"/>
+<label x="-81.28" y="0" size="1.778" layer="95" rot="R180"/>
+<pinref part="J3" gate="G$1" pin="7"/>
+<wire x1="-73.66" y1="0" x2="-81.28" y2="0" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="TMS" class="0">
@@ -8657,8 +8659,9 @@ Source: www.vanlong.com</description>
 <label x="101.6" y="55.88" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="-66.04" y1="35.56" x2="-63.5" y2="35.56" width="0.1524" layer="91"/>
-<label x="-63.5" y="35.56" size="1.778" layer="95"/>
+<label x="-81.28" y="15.24" size="1.778" layer="95" rot="R180"/>
+<pinref part="J3" gate="G$1" pin="1"/>
+<wire x1="-73.66" y1="15.24" x2="-81.28" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="TDI" class="0">
@@ -8668,8 +8671,9 @@ Source: www.vanlong.com</description>
 <label x="101.6" y="53.34" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="-66.04" y1="33.02" x2="-63.5" y2="33.02" width="0.1524" layer="91"/>
-<label x="-63.5" y="33.02" size="1.778" layer="95"/>
+<label x="-81.28" y="10.16" size="1.778" layer="95" rot="R180"/>
+<pinref part="J3" gate="G$1" pin="3"/>
+<wire x1="-73.66" y1="10.16" x2="-81.28" y2="10.16" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -8681,8 +8685,9 @@ Source: www.vanlong.com</description>
 </net>
 <net name="TRST" class="0">
 <segment>
-<wire x1="-71.12" y1="45.72" x2="-66.04" y2="45.72" width="0.1524" layer="91"/>
-<label x="-66.04" y="45.72" size="1.778" layer="95"/>
+<label x="-43.18" y="15.24" size="1.778" layer="95"/>
+<pinref part="J3" gate="G$1" pin="2"/>
+<wire x1="-53.34" y1="15.24" x2="-43.18" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <label x="63.5" y="5.08" size="1.778" layer="95" rot="R180"/>
@@ -8711,6 +8716,27 @@ Source: www.vanlong.com</description>
 <wire x1="40.64" y1="40.64" x2="48.26" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="38.1" x2="40.64" y2="40.64" width="0.1524" layer="91"/>
 <junction x="40.64" y="40.64"/>
+</segment>
+</net>
+<net name="N$8" class="0">
+<segment>
+<pinref part="R9" gate="G$1" pin="1"/>
+<pinref part="J3" gate="G$1" pin="14"/>
+<wire x1="-48.26" y1="-15.24" x2="-53.34" y2="-15.24" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$9" class="0">
+<segment>
+<pinref part="J3" gate="G$1" pin="13"/>
+<pinref part="R8" gate="G$1" pin="2"/>
+<wire x1="-73.66" y1="-15.24" x2="-78.74" y2="-15.24" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$10" class="0">
+<segment>
+<pinref part="R8" gate="G$1" pin="1"/>
+<pinref part="R9" gate="G$1" pin="2"/>
+<wire x1="-78.74" y1="-25.4" x2="-48.26" y2="-25.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
