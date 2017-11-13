@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.2.0">
+<eagle version="8.4.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -263,7 +264,7 @@
 <pin name="AIO4" x="5.08" y="-12.7" length="middle" rot="R90"/>
 <pin name="ADCA7" x="7.62" y="-12.7" length="middle" rot="R90"/>
 <pin name="ADCA3" x="10.16" y="-12.7" length="middle" rot="R90"/>
-<pin name="ADC1" x="12.7" y="-12.7" length="middle" rot="R90"/>
+<pin name="ADCA1" x="12.7" y="-12.7" length="middle" rot="R90"/>
 <pin name="AIO2" x="15.24" y="-12.7" length="middle" rot="R90"/>
 <pin name="ADCA0" x="17.78" y="-12.7" length="middle" rot="R90"/>
 <pin name="VDDA" x="20.32" y="-12.7" length="middle" rot="R90"/>
@@ -315,8 +316,8 @@
 <devices>
 <device name="" package="LQFP-48">
 <connects>
-<connect gate="G$1" pin="ADC1" pad="8"/>
 <connect gate="G$1" pin="ADCA0" pad="10"/>
+<connect gate="G$1" pin="ADCA1" pad="8"/>
 <connect gate="G$1" pin="ADCA3" pad="7"/>
 <connect gate="G$1" pin="ADCA7" pad="6"/>
 <connect gate="G$1" pin="ADCB1" pad="13"/>

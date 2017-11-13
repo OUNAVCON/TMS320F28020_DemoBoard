@@ -60,6 +60,7 @@
 </packages>
 <symbols>
 <symbol name="TMS320F28020">
+<description>TMS320F28020</description>
 <pin name="P$1" x="-5.08" y="-12.7" length="middle" rot="R90"/>
 <pin name="P$2" x="-2.54" y="-12.7" length="middle" rot="R90"/>
 <pin name="P$3" x="0" y="-12.7" length="middle" rot="R90"/>
