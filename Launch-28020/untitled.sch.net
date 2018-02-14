@@ -1,0 +1,78 @@
+* SpiceNetList
+* 
+* Exported from untitled.sch at 1/11/2018 4:49 PM
+* 
+* EAGLE Version 8.4.0 Copyright (c) 1988-2017 Autodesk, Inc.
+* 
+.TEMP=25.000000
+* --------- .OPTIONS ---------
+* --------- .PARAMS ---------
+
+* --------- devices ---------
+X_X1 N_5 N_3 VDD 0 N_6 OPAMP 
+R_R5 N_8 VDC 18k 
+V_V3 VDC 0 3.0v 
+R_R11 0 N_3 137k 
+R_R2 0 N_5 20k 
+V_V1 N_4 0 0V 
+R_R7 N_5 VDC 137k 
+R_R9 N_4 N_5 5.23k 
+R_R3 N_6 N_2 5.23k 
+R_R4 N_2 N_7 20k 
+R_R6 0 N_8 5.11k 
+V_V2 VDD 0 3.3V 
+X_X2 N_8 N_2 VDD 0 N_7 OPAMP 
+R_R8 0 N_3 5.23k 
+R_R10 N_3 N_6 20k 
+
+* --------- models ---------
+
+* (model found in library)
+
+* Autodesk EAGLE
+* BASIC OP AMP MODEL
+* Device Pins In+ In- vdd vss Vout
+* vdd vss unused in this model!!
+.SUBCKT opamp 1 2 vdd vss vout
+*
+* INPUT
+RIN   1   2   1e9
+*
+*  AMPLIFIER STAGE: GAIN, POLE, SLEW
+*   Aol=10000, fu=1000000 Hz
+G1   0    10  VALUE = { 1e-2 * V(1,2)  }
+R1   10   0   1e6
+C1   10   0   1.59e-9
+*
+* 2ND POLE 
+G2   0 20   10 0  1e-6
+R2   20       0     1e6
+C2   20       0     3.3e-14
+*
+* 3RD POLE 
+G3   0 30   20 0 1e-6
+R3   30       0     1e6
+C3   30       0     3.3e-14
+*
+* OUTPUT STAGE
+EBUFFER 80 0  30  0    1
+ROUT 80 vout 100
+.ENDS opamp
+
+
+* --------- simulation ---------
+.print DC V(N_7) I(V_V3) I(V_V1) I(V_V2)
+.print AC V(N_7) I(V_V3) I(V_V1) I(V_V2)
+.print TRAN V(N_7) I(V_V3) I(V_V1) I(V_V2)
+.save all
+.END
+
+
+
+
+
+
+
+
+
+
