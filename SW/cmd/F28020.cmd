@@ -1,4 +1,6 @@
 /*
+// TI File $Revision: /main/2 $
+// Checkin $Date: September 22, 2009   14:14:26 $
 //###########################################################################
 //
 // FILE:    F28020.cmd
@@ -6,39 +8,8 @@
 // TITLE:    Linker Command File For F28020 Device
 //
 //###########################################################################
-// $TI Release: F2802x Support Library v3.02.00.00 $
-// $Release Date: Sat Sep 16 15:26:06 CDT 2017 $
-// $Copyright:
-// Copyright (C) 2009-2017 Texas Instruments Incorporated - http://www.ti.com/
-//
-// Redistribution and use in source and binary forms, with or without 
-// modification, are permitted provided that the following conditions 
-// are met:
-// 
-//   Redistributions of source code must retain the above copyright 
-//   notice, this list of conditions and the following disclaimer.
-// 
-//   Redistributions in binary form must reproduce the above copyright
-//   notice, this list of conditions and the following disclaimer in the 
-//   documentation and/or other materials provided with the   
-//   distribution.
-// 
-//   Neither the name of Texas Instruments Incorporated nor the names of
-//   its contributors may be used to endorse or promote products derived
-//   from this software without specific prior written permission.
-// 
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
-// "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
-// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
-// OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
-// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
-// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
-// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
-// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-// $
+// $TI Release: 2802x C/C++ Header Files and Peripheral Examples V1.29 $
+// $Release Date: January 11, 2011 $
 //###########################################################################
 */
 
@@ -51,10 +22,10 @@
 // peripheral structures to the proper locations within
 // the memory map.
 //
-// The header linker files are found in <base>\headers\cmd
+// The header linker files are found in <base>\DSP2802_Headers\cmd
 //
-// For BIOS applications add:      F2802x_Headers_BIOS.cmd
-// For nonBIOS applications add:   F2802x_Headers_nonBIOS.cmd
+// For BIOS applications add:      DSP2802x_Headers_BIOS.cmd
+// For nonBIOS applications add:   DSP2802x_Headers_nonBIOS.cmd
 ========================================================= */
 
 /* ======================================================
@@ -66,12 +37,12 @@
 // locations within the memory map                                    */
 
 /* Uncomment this line to include file only for non-BIOS applications */
-/* -l F2802x_Headers_nonBIOS.cmd */
+/* -l DSP2802x_Headers_nonBIOS.cmd */
 
 /* Uncomment this line to include file only for BIOS applications */
-/* -l F2802x_Headers_BIOS.cmd */
+/* -l DSP2802x_Headers_BIOS.cmd */
 
-/* 2) In your project add the path to <base>\headers\cmd to the
+/* 2) In your project add the path to <base>\DSP2802x_headers\cmd to the
    library search path under project->build options, linker tab,
    library search path (-i).
 /*========================================================= */
@@ -104,12 +75,16 @@ PAGE 0:    /* Program Memory */
 
    PRAML0      : origin = 0x008000, length = 0x000200     /* on-chip RAM block L0 */
    OTP         : origin = 0x3D7800, length = 0x000400     /* on-chip OTP */
-//   FLASHA       : origin = 0x3F7000, length = 0x000F80     /* on-chip FLASH */
-   FLASH       : origin = 0x3F4002, length = 0x003FF5     /* on-chip FLASH */
-//   CSM_RSVD    : origin = 0x3F7F80, length = 0x000076     /* Part of FLASHA.  Program with all 0x0000 when CSM is in use. */
-   BEGIN       : origin = 0x3F4000, length = 0x000002     /* Part of FLASHA.  Used for "boot to Flash" bootloader mode. */
-//   CSM_PWL_P0  : origin = 0x3F7FF8, length = 0x000008     /* Part of FLASH.  CSM password locations in FLASHA */
+   CSM_RSVD    : origin = 0x3F7F80, length = 0x000076     /* Part of FLASHA.  Program with all 0x0000 when CSM is in use. */
+   BEGIN       : origin = 0x3F7FF6, length = 0x000002     /* Part of FLASHA.  Used for "boot to Flash" bootloader mode. */
+   CSM_PWL_P0  : origin = 0x3F7FF8, length = 0x000008     /* Part of FLASH.  CSM password locations in FLASHA */
+
+//   FLASHA      : origin = 0x3F7000, length = 0x000F80     /* on-chip FLASH */
 //   FLASHB      : origin = 0x3F6000, length = 0x001000     /* on-chip FLASH */
+//   FLASHC      : origin = 0x3F5000, length = 0x001000     /* on-chip FLASH */
+//   FLASHC      : origin = 0x3F4000, length = 0x001000     /* on-chip FLASH */
+   FLASHA      : origin = 0x3F7000, length = 0x000F80     /* on-chip FLASH */ //Variables
+   FLASHD      : origin = 0x3F4000, length = 0x003000     /* on-chip FLASH */ //Code Space
 
    IQTABLES    : origin = 0x3FE000, length = 0x000B50     /* IQ Math Tables in Boot ROM */
    IQTABLES2   : origin = 0x3FEB50, length = 0x00008C     /* IQ Math Tables in Boot ROM */
@@ -127,8 +102,7 @@ PAGE 1 :   /* Data Memory */
    RAMM0       : origin = 0x000050, length = 0x0003B0     /* on-chip RAM block M0 */
    RAMM1       : origin = 0x000400, length = 0x000400     /* on-chip RAM block M1 */
    DRAML0      : origin = 0x008200, length = 0x000200     /* on-chip RAM block L0 */
-   FLASHC      : origin = 0x3F5000, length = 0x001000     /* on-chip FLASH */
-     FLASHD      : origin = 0x3F4000, length = 0x001000     /* on-chp FLASH */
+//   FLASHD      : origin = 0x3F4000, length = 0x001000     /* on-chp FLASH */
 
 }
 
@@ -143,19 +117,19 @@ SECTIONS
 {
 
    /* Allocate program areas: */
-   .cinit              : > FLASH      PAGE = 0
-   .pinit              : > FLASH,     PAGE = 0
-   .text               : > FLASH      PAGE = 0
+   .cinit              : > FLASHA      PAGE = 0
+   .pinit              : > FLASHA,     PAGE = 0
+   .text               : > FLASHD      PAGE = 0
    codestart           : > BEGIN       PAGE = 0
-   ramfuncs            : LOAD = FLASH,
+   ramfuncs            : LOAD = FLASHA,
                          RUN = PRAML0,
                          LOAD_START(_RamfuncsLoadStart),
                          LOAD_END(_RamfuncsLoadEnd),
                          RUN_START(_RamfuncsRunStart),
                          PAGE = 0
 
-  // csmpasswds          : > CSM_PWL_P0  PAGE = 0
-  // csm_rsvd            : > CSM_RSVD    PAGE = 0
+   csmpasswds          : > CSM_PWL_P0  PAGE = 0
+   csm_rsvd            : > CSM_RSVD    PAGE = 0
 
    /* Allocate uninitalized data sections: */
    .stack              : > RAMM0       PAGE = 1
@@ -164,11 +138,11 @@ SECTIONS
 
    /* Initalized sections go in Flash */
    /* For SDFlash to program these, they must be allocated to page 0 */
-   .econst             : > FLASH      PAGE = 0
-   .switch             : > FLASH      PAGE = 0
+   .econst             : > FLASHA      PAGE = 0
+   .switch             : > FLASHA      PAGE = 0
 
    /* Allocate IQ math areas: */
-   IQmath              : > FLASH      PAGE = 0            /* Math Code */
+   IQmath              : > FLASHA      PAGE = 0            /* Math Code */
    IQmathTables        : > IQTABLES,   PAGE = 0, TYPE = NOLOAD
 
    /* Uncomment the section below if calling the IQNexp() or IQexp()
@@ -217,4 +191,3 @@ SECTIONS
 // End of file.
 //===========================================================================
 */
-

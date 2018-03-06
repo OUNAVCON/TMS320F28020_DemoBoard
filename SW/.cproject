@@ -86,7 +86,7 @@
 						</tool>
 					</fileInfo>
 					<sourceEntries>
-						<entry excluding="src/F2802x_GlobalVariableDefs.c|peripheral_lib/src/timer.c|peripheral_lib/src/spi.c|peripheral_lib/src/sci_io.c|peripheral_lib/src/pwr.c|peripheral_lib/src/i2c.c|peripheral_lib/src/f2802x_usdelay.asm|peripheral_lib/src/f2802x_tempsensorconv.c|peripheral_lib/src/f2802x_spi.c|peripheral_lib/src/f2802x_sci.c|peripheral_lib/src/f2802x_i2c.c|peripheral_lib/src/f2802x_gpio.c|peripheral_lib/src/f2802x_epwm.c|peripheral_lib/src/f2802x_ecap.c|peripheral_lib/src/f2802x_disint.asm|peripheral_lib/src/f2802x_dbgier.asm|peripheral_lib/src/f2802x_csmpasswords.asm|peripheral_lib/src/f2802x_cputimers.c|peripheral_lib/src/f2802x_comp.c|peripheral_lib/src/f2802x_codestartbranch.asm|peripheral_lib/src/f2802x_adc.c|peripheral_lib/src/comp.c|peripheral_lib/src/cap.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="src/F2802x_GlobalVariableDefs.c|peripheral_lib/src/timer.c|peripheral_lib/src/spi.c|peripheral_lib/src/sci_io.c|peripheral_lib/src/pwr.c|peripheral_lib/src/i2c.c|peripheral_lib/src/f2802x_usdelay.asm|peripheral_lib/src/f2802x_tempsensorconv.c|peripheral_lib/src/f2802x_spi.c|peripheral_lib/src/f2802x_sci.c|peripheral_lib/src/f2802x_i2c.c|peripheral_lib/src/f2802x_gpio.c|peripheral_lib/src/f2802x_epwm.c|peripheral_lib/src/f2802x_ecap.c|peripheral_lib/src/f2802x_disint.asm|peripheral_lib/src/f2802x_dbgier.asm|peripheral_lib/src/f2802x_csmpasswords.asm|peripheral_lib/src/f2802x_cputimers.c|peripheral_lib/src/f2802x_comp.c|peripheral_lib/src/f2802x_adc.c|peripheral_lib/src/comp.c|peripheral_lib/src/cap.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
