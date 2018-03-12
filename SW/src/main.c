@@ -8,6 +8,7 @@
 #include "clk.h"
 #include "pwm_app.h"
 #include "sci_app.h"
+#include "adc_app.h"
 
 /**
  * main.c
@@ -15,17 +16,16 @@
 
     GPIO_Handle myGpio;
     PIE_Handle myPie;
+    CPU_Handle myCpu;
+
 int main(void)
 {
-    ADC_Handle myAdc;
     FLASH_Handle myFlash;
-    CPU_Handle myCpu;
     uint8_t data[10];
 
     //
     // Initialize all the handles needed for this application
     //
-    myAdc = ADC_init((void *)ADC_BASE_ADDR, sizeof(ADC_Obj));
     myCpu = CPU_init((void *)NULL, sizeof(CPU_Obj));
     myFlash = FLASH_init((void *)FLASH_BASE_ADDR, sizeof(FLASH_Obj));
     myGpio = GPIO_init((void *)GPIO_BASE_ADDR, sizeof(GPIO_Obj));
@@ -52,10 +52,10 @@ int main(void)
     // Setup a debug vector table and enable the PIE
     //
  //   PIE_setDebugIntVectorTable(myPie);
-    PIE_enable(myPie);
+
 
     //Init ADC
-
+    init_adc();
     //Init ECAP
 
     //Init USART
@@ -71,7 +71,9 @@ int main(void)
     GPIO_setDirection(myGpio, GPIO_Number_12, GPIO_Direction_Output);
 
 
-
+    //Turn interrupts on for the system.
+    PIE_enable(myPie);
+    CPU_enableGlobalInts(myCpu);
 
     //Init Timer for 100hz, to perform calculations and to fire off serial port.
     uint16_t currentScaled;
@@ -86,8 +88,8 @@ int main(void)
         currentScaled = (uint16_t)((uint32_t)current >> 17);
         if(i>1000){
             GPIO_toggle(myGpio, GPIO_Number_12);
-            data[0] = 'a';
-            sendData(data, 1);
+           // data[0] = 'a';
+         //   sendData(data, 1);
             i=0;
         }
     }

@@ -70,6 +70,10 @@ void init_pwm(){
   PWM_setSocBPulseSrc(myPwm4, PWM_SocPulseSrc_CounterEqualZero);
   PWM_setSocBPeriod(myPwm4, PWM_SocPeriod_FirstEvent);
 
+  PWM_enableSocAPulse(myPwm4);
+  PWM_setSocAPulseSrc(myPwm4, PWM_SocPulseSrc_CounterEqualZero);
+  PWM_setSocAPeriod(myPwm4, PWM_SocPeriod_FirstEvent);
+
   //Enable PWM
 //  Config_PWM(PWM_PERIOD, &myPwm1);
 //  Config_PWM(PWM_PERIOD, &myPwm2);
@@ -88,6 +92,7 @@ void init_pwm(){
   PIE_enablePwmInt(myPie, PWM_Number_1);
   CPU_enableInt(myCpu, CPU_IntNumber_3);*/
   setPwm(PWM_PERIOD>>1);
+
 }
 
 static void Config_PWM(uint16_t period, PWM_Handle *pwm)
