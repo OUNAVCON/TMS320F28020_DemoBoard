@@ -8,7 +8,10 @@
 #ifndef INCLUDE_SCI_APP_H_
 #define INCLUDE_SCI_APP_H_
 
+#include <DSP28x_Project.h>
+
 void init_sci();
+void sendData(uint8_t* data, uint8_t len);
 
 
 

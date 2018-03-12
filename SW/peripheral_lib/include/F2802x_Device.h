@@ -58,7 +58,7 @@ extern "C" {
 #define   DSP28_280200PT  0
 #define   DSP28_280200DA  0
 
-#define   DSP28_28020PT   0
+#define   DSP28_28020PT   TARGET
 #define   DSP28_28020DA   0
 
 #define   DSP28_28021PT   0
@@ -73,7 +73,7 @@ extern "C" {
 #define   DSP28_28026PT   0
 #define   DSP28_28026DA   0
 
-#define   DSP28_28027PT   TARGET
+#define   DSP28_28027PT   0
 #define   DSP28_28027DA   0
 
 #define   DSP28_28026FPT  0

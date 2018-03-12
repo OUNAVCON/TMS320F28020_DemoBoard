@@ -7,6 +7,7 @@
 #include "clock.h"
 #include "clk.h"
 #include "pwm_app.h"
+#include "sci_app.h"
 
 /**
  * main.c
@@ -19,6 +20,7 @@ int main(void)
     ADC_Handle myAdc;
     FLASH_Handle myFlash;
     CPU_Handle myCpu;
+    uint8_t data[10];
 
     //
     // Initialize all the handles needed for this application
@@ -57,7 +59,7 @@ int main(void)
     //Init ECAP
 
     //Init USART
-
+    init_sci();
     //init pwm
     init_pwm();
 
@@ -84,6 +86,8 @@ int main(void)
         currentScaled = (uint16_t)((uint32_t)current >> 17);
         if(i>1000){
             GPIO_toggle(myGpio, GPIO_Number_12);
+            data[0] = 'a';
+            sendData(data, 1);
             i=0;
         }
     }

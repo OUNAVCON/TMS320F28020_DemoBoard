@@ -27,7 +27,7 @@ void init_clocks(){
     CLK_setOscSrc(myClk, CLK_OscSrc_Internal);
 
     //
-    // Setup the PLL for x10 /2 which will yield 50Mhz = 10Mhz * 10 / 2
+    // Setup the PLL for x10 /2 which will yield 40Mhz = 10Mhz * 8 / 2
     //
     PLL_setup(myPll, PLL_Multiplier_8, PLL_DivideSelect_ClkIn_by_2);
 }

@@ -59,7 +59,7 @@ extern "C" {
 //
 // Uncomment for 60 MHz devices [60 MHz = (10MHz * 12)/2]
 //
-#define DSP28_PLLCR   12
+//#define DSP28_PLLCR   12
 
 //#define DSP28_PLLCR   11
 
@@ -73,7 +73,7 @@ extern "C" {
 //
 // Uncomment for 40 MHz devices [40 MHz = (10MHz * 8)/2]
 //
-//#define DSP28_PLLCR    8
+#define DSP28_PLLCR    8
 
 //#define DSP28_PLLCR    7
 //#define DSP28_PLLCR    6
@@ -125,9 +125,9 @@ extern "C" {
 //                 Uncomment the line: #define CPU_RATE 16.667L
 //
 
-#define CPU_RATE   16.667L   // for a 60MHz CPU clock speed (SYSCLKOUT)
+//#define CPU_RATE   16.667L   // for a 60MHz CPU clock speed (SYSCLKOUT)
 //#define CPU_RATE   20.000L   // for a 50MHz CPU clock speed  (SYSCLKOUT)
-//#define CPU_RATE   25.000L   // for a 40MHz CPU clock speed  (SYSCLKOUT)
+#define CPU_RATE   25.000L   // for a 40MHz CPU clock speed  (SYSCLKOUT)
 //#define CPU_RATE   33.333L   // for a 30MHz CPU clock speed  (SYSCLKOUT)
 //#define CPU_RATE   41.667L   // for a 24MHz CPU clock speed  (SYSCLKOUT)
 //#define CPU_RATE   50.000L   // for a 20MHz CPU clock speed  (SYSCLKOUT)
@@ -145,9 +145,9 @@ extern "C" {
 // 28026||28027 devices only
 //
 #if (DSP28_28026PT||DSP28_28026DA||DSP28_28027PT||DSP28_28027DA)
-  #define CPU_FRQ_60MHZ    1     // 60 Mhz CPU Freq (10 MHz input clock)
+  #define CPU_FRQ_60MHZ    0     // 60 Mhz CPU Freq (10 MHz input clock)
   #define CPU_FRQ_50MHZ    0
-  #define CPU_FRQ_40MHZ    0
+  #define CPU_FRQ_40MHZ    1
 
 //
 // 28023||28023 devices
