@@ -9,7 +9,9 @@
 #include "pwm_app.h"
 #include "sci_app.h"
 #include "adc_app.h"
+#include "spi_app.h"
 
+#include "can.h"
 /**
  * main.c
  */
@@ -22,6 +24,15 @@ int main(void)
 {
     FLASH_Handle myFlash;
     uint8_t data[10];
+
+    CAN_MSG msg;
+    CAN_MSG rxMsg;
+    uint8_t canTXStatus = 0;
+    uint8_t canRXStatus = 0;
+    static uint8_t canStatus;
+
+    uint32_t index = 0;
+    uint32_t canIndex = 0;
 
     //
     // Initialize all the handles needed for this application
@@ -58,11 +69,18 @@ int main(void)
     init_adc();
     //Init ECAP
 
+    initSpi();
     //Init USART
     init_sci();
     //init pwm
     init_pwm();
 
+        initCAN();
+        setCANRXFilter(CAN_RX_MAILBOX_1, 0x000000F9, CAN_FILTER_0);
+        setCANRXFilter(CAN_RX_MAILBOX_1, 0x00000000, CAN_FILTER_1);
+        setCANRXMask(CAN_RX_MAILBOX_1, 0x000000FF);
+        setCANRXEnable(CAN_RX_MAILBOX_1);
+        setCANNormalMode();
 
     //Enable Debug GPIO.
     GPIO_setPullUp(myGpio, GPIO_Number_12, GPIO_PullUp_Disable);
@@ -78,6 +96,22 @@ int main(void)
     //Init Timer for 100hz, to perform calculations and to fire off serial port.
     uint16_t currentScaled;
     int i = 0;
+
+
+
+    msg.ID = 0x18FF0013;
+    msg.dlc = 8;
+    msg.data[0] = 0x00;
+    msg.data[1] = 0x00;
+    msg.data[2] = 0x00;
+    msg.data[3] = 0x00;
+    msg.data[4] = 0x00;
+    msg.data[5] = 0x00;
+    msg.data[6] = 0x00;
+    msg.data[7] = 0x00;
+    //canStatus = readCANStatus();
+
+
     while(1){
         //Check if serial port go flag is set.
         i++; //Kill Some time.
@@ -91,6 +125,35 @@ int main(void)
            // data[0] = 'a';
          //   sendData(data, 1);
             i=0;
+
+
+
+
+
+            /*      if(canIndex > 10){
+                      // canStatus = readCANStatus();
+                       canTXStatus = readCANTXStatus(CAN_TX_MAILBOX_1);
+                       canRXStatus = readCANRXStatus(CAN_RX_MAILBOX_1);
+                       if ((canRXStatus & 0x01) == 0x01)
+                       {
+                           readMailbox(CAN_RX_MAILBOX_1, &rxMsg);
+                           clearCANRXStatus(CAN_RX_MAILBOX_1);
+                           msg.data[1]++;
+                           msg.data[2] = rxMsg.data[0];
+                       }
+                      if ((canTXStatus & 0x08) == 0)
+                       {
+                           msg.data[0]++;
+                           writeMailbox(CAN_TX_MAILBOX_1, &msg);
+                       }
+
+                       canIndex = 0;
+                   }
+           */
+
+
+
+
         }
     }
 	return 0;
